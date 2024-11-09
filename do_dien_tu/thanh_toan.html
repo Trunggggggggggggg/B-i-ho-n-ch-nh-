@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Thanh Toán - Đồ Điện Tử</title>
+</head>
+<body>
+    <header>
+        <h1>Thanh Toán</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Trang Chủ</a></li>
+                <li><a href="gio_hang.html">Giỏ Hàng</a></li>
+                <li><a href="tai_khoan.html">Tài Khoản</a></li>
+                <li><a href="lien_he.html">Liên Hệ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="checkout">
+            <h2>Thông Tin Giao Hàng</h2>
+            <form>
+                <label for="name">Họ và Tên:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="address">Địa Chỉ:</label>
+                <input type="text" id="address" name="address" required>
+                <label for="phone">Số Điện Thoại:</label>
+                <input type="tel" id="phone" name="phone" required>
+                <h3>Chọn Phương Thức Thanh Toán</h3>
+                <label><input type="radio" name="payment" value="transfer"> Chuyển Khoản</label>
+                <label><input type="radio" name="payment" value="cod"> Thanh Toán Khi Nhận Hàng</label>
+                <label><input type="radio" name="payment" value="card"> Thanh Toán Qua Thẻ</label>
+                <button type="submit">Xác Nhận Đơn Hàng</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2023 Đồ Điện Tử. Bảo lưu mọi quyền.</p>
+    </footer>
+</body>
+</html>
