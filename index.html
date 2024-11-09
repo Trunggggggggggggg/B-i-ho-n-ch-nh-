@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Trang Chủ - Đồ Điện Tử</title>
+    <style>
+        /* CSS cho căn đều các ô sản phẩm */
+        .product-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        .product {
+            width: 200px;
+            border: 1px solid #533535;
+            border-radius: 5px;
+            padding: 10px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .product img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+        /* CSS cho logo và ảnh banner */
+        .navbar-brand img {
+            width: 100px;
+            height: auto;
+        }
+        .banner {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header với logo và thanh điều hướng -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="index.html">
+                <img src="images/logo.png" alt="Logo">
+            </a>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Trang Chủ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="danh_muc.html">Danh Mục Sản Phẩm</a></li>
+                    <li class="nav-item"><a class="nav-link" href="gio_hang.html">Giỏ Hàng</a></li>
+                    <li class="nav-item"><a class="nav-link" href="tai_khoan.html">Tài Khoản</a></li>
+                    <li class="nav-item"><a class="nav-link" href="lien_he.html">Liên Hệ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="faq.html">Câu Hỏi Thường Gặp</a></li>
+                    <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Banner ảnh ngang màn hình -->
+    <section class="banner-section">
+        <img src="images/nen.png" alt="Banner" class="banner">
+    </section>
+
+    <main>
+        <section class="anh">
+            <img src="images/nen.png" alt="Banner">
+        </section>
+        
+
+        <section class="products">
+            <h2>Sản Phẩm Nổi Bật</h2>
+            <div class="row">
+                <!-- Dòng 1 -->
+                <div class="col-md-2">
+                    <div class="card">
+                        <img src="images/dt1.png" class="card-img-top" alt="Sản phẩm 1">
+                        <div class="card-body">
+                            <h5 class="card-title">Sản Phẩm 1</h5>
+                            <p class="card-text">Giá: 1,000,000 VNĐ</p>
+                            <button class="btn btn-primary" onclick="addToCart('Sản Phẩm 1')">Mua</button>
+                            <button class="btn btn-secondary" onclick="addToCart('Sản Phẩm 1')">Thêm vào giỏ hàng</button>
+
+                            <a href="chi_tiet_san_pham.html" class="btn btn-info">Chi tiết</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="card">
+                        <img src="images/dt11.png" class="card-img-top" alt="Sản phẩm 2">
+                        <div class="card-body">
+                            <h5 class="card-title">Sản Phẩm 2</h5>
+                            <p class="card-text">Giá: 1,200,000 VNĐ</p>
+                            <button class="btn btn-primary" onclick="addToCart('Sản Phẩm 2')">Mua</button>
+                            <button class="btn btn-secondary" onclick="addToCart('Sản Phẩm 2')">Thêm vào giỏ hàng</button>
+                            <a href="chi_tiet_san_pham.html" class="btn btn-info">Chi tiết</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="card">
+                        <img src="images/dt12.png" class="card-img-top" alt="Sản phẩm 3">
+                        <div class="card-body">
+                            <h5 class="card-title">Sản Phẩm 3</h5>
+                            <p class="card-text">Giá: 1,500,000 VNĐ</p>
+                            <button class="btn btn-primary" onclick="addToCart('Sản Phẩm 3')">Mua</button>
+                            <button class="btn btn-secondary" onclick="addToCart('Sản Phẩm 3')">Thêm vào giỏ hàng</button>
+                            <a href="chi_tiet_san_pham.html" class="btn btn-info">Chi tiết</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="card">
+                        <img src="images/dt13.png" class="card-img-top" alt="Sản phẩm 4">
+                        <div class="card-body">
+                            <h5 class="card-title">Sản Phẩm 4</h5>
+                            <p class="card-text">Giá: 1,800,000 VNĐ</p>
+                            <button class="btn btn-primary" onclick="addToCart('Sản Phẩm 4')">Mua</button>
+                            <button class="btn btn-secondary" onclick=" addToCart('Sản Phẩm 4')">Thêm vào giỏ hàng</button>
+                            <a href="chi_tiet_san_pham.html" class="btn btn-info">Chi tiết</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="card">
+                        <img src="images/dt14.png" class="card-img-top" alt="Sản phẩm 5">
+                        <div class="card-body">
+                            <h5 class="card-title">Sản Phẩm 5</h5>
+                            <p class="card-text">Giá: 2,000,000 VNĐ</p>
+                            <button class="btn btn-primary" onclick="addToCart('Sản Phẩm 5')">Mua</button>
+                            <button class="btn btn-secondary" onclick="addToCart('Sản Phẩm 5')">Thêm vào giỏ hàng</button>
+                            <a href="chi_tiet_san_pham.html" class="btn btn-info">Chi tiết</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="card">
+                        <img src="images/dt15.png" class="card-img-top" alt="Sản phẩm 6">
+                        <div class="card-body">
+                            <h5 class="card-title">Sản Phẩm 6</h5>
+                            <p class="card-text">Giá: 2,200,000 VNĐ</p>
+                            <button class="btn btn-primary" onclick="addToCart('Sản Phẩm 6')">Mua</button>
+                            <button class="btn btn-secondary" onclick="addToCart('Sản Phẩm 6')">Thêm vào giỏ hàng</button>
+                            <a href="chi_tiet_san_pham.html" class="btn btn-info">Chi tiết</a>
+                        </div>
+                    </div>
+                </div>
+               
+            </div>
+            
+               
+                
+            </div>
+        </section>
+
+        <section class="new-products">
+            <h2>Sản Phẩm Mới</h2>
+            <div class="row">
+                <!-- Dòng 1 -->
+                <div class="col-md-2">
+                    <div class="card">
+                        <img src="images/ip1.png" class="card-img-top" alt="Sản phẩm mới 1">
+                        <div class="card-body">
+                            <h5 class="card-title">Sản Phẩm Mới 1</h5>
+                            <p class="card-text">Giá: 1,100,000 VNĐ</p>
+                            <button class="btn btn-primary" onclick="addToCart('Sản Phẩm Mới 1')">Mua</button>
+                            <button class="btn btn-secondary" onclick="addToCart('Sản Phẩm Mới 1')">Thêm vào giỏ hàng</button>
+                            <a href="chi_tiet_san_pham_moi.html" class="btn btn-info">Chi tiết</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="card">
+                        <img src="images/ip2.png" class="card-img-top" alt="Sản phẩm mới 2">
+                        <div class="card-body">
+                            <h5 class="card-title">Sản Phẩm Mới 2</h5>
+                            <p class="card-text">Giá: 1,300,000 VNĐ</p>
+                            <button class="btn btn-primary" onclick="addToCart('Sản Phẩm Mới 2')">Mua</button>
+                            <button class="btn btn-secondary" onclick="addToCart('Sản Phẩm Mới 2')">Thêm vào giỏ hàng</button>
+                            <a href="chi_tiet_san_pham_moi.html" class="btn btn-info">Chi tiết</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="card">
+                        <img src="images/ip3.png" class="card-img-top" alt="Sản phẩm mới 3">
+                        <div class="card-body">
+                            <h5 class="card-title">Sản Phẩm Mới 3</h5>
+                            <p class="card-text">Giá: 1,600,000 VNĐ</p>
+                            <button class="btn btn-primary" onclick="addToCart('Sản Phẩm Mới 3')">Mua</button>
+                            <button class="btn btn-secondary" onclick="addToCart('Sản Phẩm Mới 3')">Thêm vào giỏ hàng</button>
+                            <a href="chi_tiet_san_pham_moi.html" class="btn btn-info">Chi tiết</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="card">
+                        <img src="images/ip3.png" class="card-img-top" alt="Sản phẩm mới 4">
+                        <div class="card-body">
+                            <h5 class="card-title">Sản Phẩm Mới 4</h5>
+                            <p class="card-text">Giá: 1,900,000 VNĐ</p>
+                            <button class="btn btn-primary" onclick="addToCart('Sản Phẩm Mới 4')">Mua</button>
+                            <button class="btn btn-secondary" onclick="addToCart('Sản Phẩm Mới 4')">Thêm vào giỏ hàng</button>
+                            <a href="chi_tiet_san_pham_moi.html" class="btn btn-info">Chi tiết</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="card "><img src="images/ip4.png" class="card-img-top" alt="Sản phẩm mới 5">
+                        <div class="card-body">
+                            <h5 class="card-title">Sản Phẩm Mới 5</h5>
+                            <p class="card-text">Giá: 2,100,000 VNĐ</p>
+                            <button class="btn btn-primary" onclick="addToCart('Sản Phẩm Mới 5')">Mua</button>
+                            <button class="btn btn-secondary" onclick="addToCart('Sản Phẩm Mới 5')">Thêm vào giỏ hàng</button>
+                            <a href="chi_tiet_san_pham_moi.html" class="btn btn-info">Chi tiết</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="card">
+                        <img src="images/ip5.png" class="card-img-top" alt="Sản phẩm mới 6">
+                        <div class="card-body">
+                            <h5 class="card-title">Sản Phẩm Mới 6</h5>
+                            <p class="card-text">Giá: 2,300,000 VNĐ</p>
+                            <button class="btn btn-primary" onclick="addToCart('Sản Phẩm Mới 6')">Mua</button>
+                            <button class="btn btn-secondary" onclick="addToCart('Sản Phẩm Mới 6')">Thêm vào giỏ hàng</button>
+                            <a href="chi_tiet_san_pham_moi.html" class="btn btn-info">Chi tiết</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="card">
+                        <img src="images/ip6.png" class="card-img-top" alt="Sản phẩm mới 7">
+                        <div class="card-body">
+                            <h5 class="card-title">Sản Phẩm Mới 7</h5>
+                            <p class="card-text">Giá: 2,500,000 VNĐ</p>
+                            <button class="btn btn-primary" onclick="addToCart('Sản Phẩm Mới 7')">Mua</button>
+                            <button class="btn btn-secondary" onclick="addToCart('Sản Phẩm Mới 7')">Thêm vào giỏ hàng</button>
+                            <a href="chi_tiet_san_pham_moi.html" class="btn btn-info">Chi tiết</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="card">
+                        <img src="images/ip7.png" class="card-img-top" alt="Sản phẩm mới 8">
+                        <div class="card-body">
+                            <h5 class="card-title">Sản Phẩm Mới 8</h5>
+                            <p class="card-text">Giá: 2,700,000 VNĐ</p>
+                            <button class="btn btn-primary" onclick="addToCart('Sản Phẩm Mới 8')">Mua</button>
+                            <button class="btn btn-secondary" onclick="addToCart('Sản Phẩm Mới 8')">Thêm vào giỏ hàng</button>
+                            <a href="chi_tiet_san_pham_moi.html" class="btn btn-info">Chi tiết</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="card">
+                        <img src="images/ip8.png" class="card-img-top" alt="Sản phẩm mới 9">
+                        <div class="card-body">
+                            <h5 class="card-title">Sản Phẩm Mới 9</h5>
+                            <p class="card-text">Giá: 2,900,000 VNĐ</p>
+                            <button class="btn btn-primary" onclick="addToCart('Sản Phẩm Mới 9')">Mua</button>
+                            <button class="btn btn-secondary" onclick="addToCart('Sản Phẩm Mới 9')">Thêm vào giỏ hàng</button>
+                            <a href="chi_tiet_san_pham_moi.html" class="btn btn-info">Chi tiết</a>
+                        </div>
+                    </div>
+                </div>
+               
+                <div class="col-md-2">
+                    <div class="card">
+                        <img src="images/ip9.png" class="card-img-top" alt="Sản phẩm mới 10">
+                        <div class="card-body">
+                            <h5 class="card-title">Sản Phẩm Mới 10</h5>
+                            <p class="card-text">Giá: 3,000,000 VNĐ</p>
+                            <button class="btn btn-primary" onclick="addToCart('Sản Phẩm Mới 10')">Mua</button>
+                            <button class="btn btn-secondary" onclick="addToCart('Sản Phẩm Mới 10')">Thêm vào giỏ hàng</button>
+                            <a href="chi_tiet_san_pham_moi.html" class="btn btn-info">Chi tiết</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="discount-products">
+            <h2>Sản Phẩm Giảm Giá</h2>
+            <div class="row">
+                <!-- Dòng 1 -->
+                <div class="col-md-2">
+                    <div class="card">
+                        <img src="images/z1.png" class="card-img-top" alt="Sản phẩm giảm giá 1">
+                        <div class="card-body">
+                            <h5 class="card-title">Sản Phẩm Giảm Giá 1</h5>
+                            <p class="card-text">Giá: 800,000 VNĐ</p>
+                            <button class="btn btn-primary" onclick="addToCart('Sản Phẩm Giảm Giá 1')">Mua</button>
+                            <button class="btn btn-secondary" onclick="addToCart('Sản Phẩm Giảm Giá 1')">Thêm vào giỏ hàng</button>
+                            <a href="chi_tiet_san_pham_giam_gia.html" class="btn btn-info">Chi tiết</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="card">
+                        <img src="images/z2.png" class="card-img-top" alt="Sản phẩm giảm giá 2">
+                        <div class="card-body">
+                            <h5 class="card-title">Sản Phẩm Giảm Giá 2</h5>
+                            <p class="card-text">Giá: 900,000 VNĐ</p>
+                            <button class="btn btn-primary" onclick="addToCart('Sản Phẩm Giảm Giá 2')">Mua</button>
+                            <button class="btn btn-secondary" onclick="addToCart('Sản Phẩm Giảm Giá 2')">Thêm vào giỏ hàng</button>
+                            <a href="chi_tiet_san_pham_giam_gia.html" class="btn btn-info">Chi tiết</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="card">
+                        <img src="images/z3.png" class="card-img-top" alt="Sản phẩm giảm giá 3">
+                        <div class="card-body">
+                            <h5 class="card-title">Sản Phẩm Giảm Giá 3</h5>
+                            <p class="card-text">Giá: 1,000,000 VNĐ</p>
+                            <button class="btn btn-primary" onclick="addToCart('Sản Phẩm Giảm Giá 3')">Mua</button>
+                            <button class="btn btn-secondary" onclick="addToCart('Sản Phẩm Giảm Giá 3')">Thêm vào giỏ hàng</button>
+                            <a href="chi_tiet_san_pham_giam_gia.html" class="btn btn-info">Chi tiết</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="card">
+                        <img src="images/z4.png" class="card-img-top" alt="Sản phẩm giảm giá 4">
+                        <div class="card-body">
+                            <h5 class="card-title">Sản Phẩm Giảm Giá 4</h5>
+                            <p class="card-text">Giá: 1,100,000 VNĐ</p>
+                            <button class="btn btn-primary" onclick="addToCart('Sản Phẩm Giảm Giá 4')">Mua</button>
+                            <button class="btn btn-secondary" onclick="addToCart('Sản Phẩm Giảm Giá 4')">Thêm vào giỏ hàng</button>
+                            <a href="chi_tiet_san_pham_giam_gia.html" class="btn btn-info">Chi tiết</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="card">
+                        <img src="images/z5.png" class="card-img-top" alt="Sản phẩm giảm giá 5">
+                        <div class="card-body">
+                            <h5 class="card-title">Sản Phẩm Giảm Giá 5</h5>
+                            <p class="card-text">Giá: 1,200,000 VNĐ</p>
+                            <button class="btn btn-primary" onclick="addToCart('Sản Phẩm Giảm Giá 5')">Mua</button>
+                            <button class="btn btn-secondary" onclick="addToCart('Sản Phẩm Giảm Giá 5')">Thêm vào giỏ hàng</button>
+                            <a href="chi_tiet_san_pham_giam_gia.html" class="btn btn-info">Chi tiết</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="card">
+                        <img src="images/z6.png" class="card-img-top" alt="Sản phẩm giảm giá 6">
+                        <div class="card-body">
+                            <h5 class="card-title">Sản Phẩm Giảm Giá 6</h5>
+                            <p class="card-text">Giá: 1,300,000 VNĐ</p>
+                            <button class="btn btn-primary" onclick="addToCart('Sản Phẩm Giảm Giá 6')">Mua</button>
+                            <button class="btn btn-secondary" onclick="addToCart('Sản Phẩm Giảm Giá 6')">Thêm vào giỏ hàng</button>
+                            <a href="chi_tiet_san_pham_giam_gia.html" class="btn btn-info">Chi tiết</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="card">
+                        <img src="images/z7.png" class="card-img-top" alt="Sản phẩm giảm giá 7">
+                        <div class="card-body">
+                            <h5 class="card-title">Sản Phẩm Giảm Giá 7</h5>
+                            <p class="card-text">Giá: 1,400,000 VNĐ</p>
+                            <button class="btn btn-primary" onclick="addToCart('Sản Phẩm Giảm Giá 7')">Mua</button>
+                            <button class="btn btn-secondary" onclick="addToCart('Sản Phẩm Giảm Giá 7')">Thêm vào giỏ hàng</button>
+                            <a href="chi_tiet_san_pham_giam_gia.html" class="btn btn-info">Chi tiết</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="card">
+                        <img src="images/z8.png" class="card-img-top" alt="Sản phẩm giảm giá 8">
+                        <div class="card-body">
+                            <h5 class="card-title">Sản Phẩm Giảm Giá 8</h5>
+                            <p class="card-text">Giá: 1,500,000 VNĐ</p>
+                            <button class="btn btn-primary" onclick="addToCart('Sản Phẩm Giảm Giá 8')">Mua</button>
+                            <button class="btn btn-secondary" onclick="addToCart('Sản Phẩm Giảm Giá 8')">Thêm vào giỏ hàng</button>
+                            <a href="chi_tiet_san_pham_giam_gia.html" class="btn btn-info">Chi tiết</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="card">
+                        <img src="images/z10.png" class="card-img-top" alt="Sản phẩm giảm giá 9">
+                        <div class="card-body">
+                            <h5 class="card-title">Sản Phẩm Gi ảm Giá 9</h5>
+                            <p class="card-text">Giá: 1,600,000 VNĐ</p>
+                            <button class="btn btn-primary" onclick="addToCart('Sản Phẩm Giảm Giá 9')">Mua</button>
+                            <button class="btn btn-secondary" onclick="addToCart('Sản Phẩm Giảm Giá 9')">Thêm vào giỏ hàng</button>
+                            <a href="chi_tiet_san_pham_giam_gia.html" class="btn btn-info">Chi tiết</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="card">
+                        <img src="images/z12.png" class="card-img-top" alt="Sản phẩm giảm giá 10">
+                        <div class="card-body">
+                            <h5 class="card-title">Sản Phẩm Giảm Giá 10</h5>
+                            <p class="card-text">Giá: 1,700,000 VNĐ</p>
+                            <button class="btn btn-primary" onclick="addToCart('Sản Phẩm Giảm Giá 10')">Mua</button>
+                            <button class="btn btn-secondary" onclick="addToCart('Sản Phẩm Giảm Giá 10')">Thêm vào giỏ hàng</button>
+                            <a href="chi_tiet_san_pham_giam_gia.html" class="btn btn-info">Chi tiết</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3">
+                        <h5>TỔNG ĐÀI MIỄN PHÍ</h5>
+                        <p>Tư vấn mua hàng (Miễn phí)<br>1800.6601 (Nhánh 1)<br>Hỗ trợ kỹ thuật<br>1800.6601 (Nhánh 2)<br>Góp ý, khiếu nại<br>1800.6616 (8h00 - 22h00)</p>
+                    </div>
+                    <div class="col-md-3">
+                        <h5>VỀ CHÚNG TÔI</h5>
+                        <p>Giới thiệu về công ty<br>Quy chế hoạt động<br>F.Friends - Bạn đồng hành<br>Tin tức khuyến mại<br>Giới thiệu máy đổi trả<br>Hướng dẫn mua hàng & thanh toán online<br>Đại lý uỷ quyền và TTBH uỷ quyền của Apple<br>Tra cứu hoá đơn điện tử<br>Tra cứu bảo hành<br>Câu hỏi thường gặp</p>
+                    </div>
+                    <div class="col-md-3">
+                        <h5>CHÍNH SÁCH</h5>
+                        <p>Chính sách bảo hành<br>Chính sách đổi trả<br>Chính sách bảo mật<br>Chính sách trả góp<br>Chính sách khui hộp sản phẩm<br>Chính sách giao hàng & lắp đặt<br>Chính sách mạng di động FPT<br>Chính sách thu thập & xử lý dữ liệu cá nhân<br>Quy định về hỗ trợ kỹ thuật & sao lưu dữ liệu</p>
+                    </div>
+                    <div class="col-md-3">
+                        <h5>Kết Nối Với Chúng Tôi</h5>
+                        <a href="#"><img src="images/facebook.png" alt="Facebook"></a>
+                        <a href="#"><img src="images/instagram.png" alt="Instagram"></a>
+                        <a href="#"><img src="images/youtube.png" alt="YouTube"></a>
+                        <a href="#"><img src="images/zalo.png" alt="Zalo"></a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Cửa Hàng Đồ Điện Tử. Tất cả quyền được bảo lưu.</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="js/script.js"></script>
+    <script>
+        function addToCart(productName, productPrice, productImage) {
+            // Lấy giỏ hàng từ localStorage hoặc khởi tạo giỏ hàng mới nếu chưa có
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+            
+            // Kiểm tra xem sản phẩm đã có trong giỏ chưa
+            const existingItem = cart.find(item => item.name === productName);
+            
+            if (existingItem) {
+                // Nếu sản phẩm đã có, tăng số lượng
+                existingItem.quantity += 1;
+            } else {
+                // Nếu chưa có, thêm sản phẩm mới với ảnh
+                cart.push({ name: productName, price: productPrice, image: productImage, quantity: 1 });
+            }
+    
+            // Lưu lại giỏ hàng vào localStorage
+            localStorage.setItem("cart", JSON.stringify(cart));
+            
+            alert("Sản phẩm đã được thêm vào giỏ hàng!");
+        }
+    </script>
+    
+ 
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Giỏ Hàng - Đồ Điện Tử</title>
+</head>
+<body>
+    <header>
+        <h1>Giỏ Hàng</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Trang Chủ</a></li>
+                <li><a href="danh_muc.html">Danh Mục Sản Phẩm</a></li>
+                <li><a href="tai_khoan.html">Tài Khoản</a></li>
+                <li><a href="lien_he.html">Liên Hệ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <main>
+        <section class="cart">
+            <h2>Danh Sách Sản Phẩm Trong Giỏ Hàng</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Ảnh</th>
+                        <th>Tên Sản Phẩm</th>
+                        <th>Giá</th>
+                        <th>Số Lượng</th>
+                        <th>Tổng</th>
+                        <th>Thao Tác</th>
+                    </tr>
+                </thead>
+                <tbody id="cart-table">
+                    <!-- Nội dung giỏ hàng sẽ được chèn ở đây -->
+                </tbody>
+            </table>
+            <h3 id="total-cost">Tổng Chi Phí: 0 VNĐ</h3>
+            <button onclick="checkout()">Tiến Hành Thanh Toán</button>
+        </section>
+    </main>
+    
+
+    
+
+    <footer>
+        <p>© 2023 Đồ Điện Tử. Bảo lưu mọi quyền.</p>
+    </footer>
+    <script>
+        function loadCart() {
+            // Lấy giỏ hàng từ localStorage
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+            let cartTable = document.getElementById("cart-table");
+    
+            // Xóa nội dung cũ
+            cartTable.innerHTML = "";
+    
+            // Hiển thị các sản phẩm trong giỏ hàng
+            cart.forEach((item, index) => {
+                let row = `
+                    <tr>
+                        <td><img src="${item.image}" alt="${item.name}" width="50" height="50"></td>
+                        <td>${item.name}</td>
+                        <td>${item.price} VNĐ</td>
+                        <td><input type="number" value="${item.quantity}" min="1" onchange="updateQuantity(${index}, this.value)"></td>
+                        <td>${item.price * item.quantity} VNĐ</td>
+                        <td><button onclick="removeFromCart(${index})">Xóa</button></td>
+                    </tr>
+                `;
+                cartTable.innerHTML += row;
+            });
+    
+            updateTotal();
+        }
+    
+        function updateQuantity(index, quantity) {
+            let cart = JSON.parse(localStorage.getItem("cart"));
+            cart[index].quantity = parseInt(quantity);
+            localStorage.setItem("cart", JSON.stringify(cart));
+            loadCart();
+        }
+    
+        function removeFromCart(index) {
+            let cart = JSON.parse(localStorage.getItem("cart"));
+            cart.splice(index, 1);
+            localStorage.setItem("cart", JSON.stringify(cart));
+            loadCart();
+        }
+    
+        function updateTotal() {
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+            let total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+            document.getElementById("total-cost").innerText = `Tổng Chi Phí: ${total} VNĐ`;
+        }
+    
+        // Tải giỏ hàng khi trang được tải
+        window.onload = loadCart;
+    </script>
+    
+
+ 
+</body>
+</html>
